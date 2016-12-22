@@ -1,18 +1,55 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Personnages list</h1>
 
-    <table>
+    <div class="container center-block">
+
+        <h1 style="text-align: center; color: steelblue">Let's fight !!!!</h1>
+
+        <h2 style="text-align: center">Choose your fighter:</h2>
+        <BR/>
+        <BR/>
+
+        <div class="col-md-5">
+
+            <select class="form-control">
+                {% for personnage in personnages %}
+                    <option>{{ personnage.id }}</option>
+                {% endfor %}
+            </select>
+
+        </div>
+        <div class="col-md-2">
+            <pre style="text-align: center;">VS</pre>
+        </div>
+        <div class="col-md-5">
+            <select class="form-control">
+                {% for personnage in personnages %}
+                    <option>{{ personnage.id }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="col-md-12">
+            <button type="button" class="btn btn-info" style="width: 100%">Fight !</button>
+        </div>
+    </div>
+    <BR/>
+    <BR/>
+
+    <div class="container">
+    <h3>Players :</h3>
+
+    <table class="table table-bordered">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Xp</th>
-                <th>Forces</th>
-                <th>Puissancearme</th>
-                <th>Pv</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Xp</th>
+            <th>Forces</th>
+            <th>Puissance arme</th>
+            <th>Pv</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for personnage in personnages %}
@@ -37,9 +74,11 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('personnage_new') }}">Create a new personnage</a>
-        </li>
-    </ul>
+
+            <a class="btn btn-info" href="{{ path('personnage_new') }}">Create a new personnage</a>
+       <BR/>
+        <BR/>
+        
+    </div>
+
 {% endblock %}
