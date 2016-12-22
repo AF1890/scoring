@@ -13,7 +13,12 @@ class PersonnageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('xP')->add('forces')->add('puissanceArme')->add('pV')        ;
+        $builder
+            ->add('xP')
+            ->add('forces')
+            ->add('puissanceArme')
+            ->add('pV')
+        ;
     }
     
     /**

@@ -12,13 +12,17 @@ AppBundle\Entity\Personnage:
         xP:
             type: integer
             column: XP
+            nullable: true
         forces:
             type: integer
             column: Forces
+            nullable: true
         puissanceArme:
             type: integer
             column: PuissanceArme
+            nullable: true
         pV:
             type: integer
             column: PV
+            nullable: true
     lifecycleCallbacks: {  }

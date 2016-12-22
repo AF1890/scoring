@@ -36,10 +36,18 @@ class PersonnageController extends Controller
         $personnage = new Personnage();
         $form = $this->createForm('AppBundle\Form\PersonnageType', $personnage);
         $form->handleRequest($request);
-        $XP = 
+        $XP = $personnage->setXP(rand(0,400));
+        $force = $personnage->setForces((rand(0,200)));
+        $PA = $personnage->setPuissanceArme(rand(100,400));
+        $PV = $personnage->setPV(500);
+
+
+
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
             $em->persist($personnage);
             $em->flush($personnage);
 
@@ -48,6 +56,10 @@ class PersonnageController extends Controller
 
         return $this->render('@App/personnage/new.html.twig', array(
             'personnage' => $personnage,
+            'xp' => $XP,
+            'force' => $force,
+            'PA' => $PA,
+            'PV' => $PV,
             'form' => $form->createView(),
         ));
     }
