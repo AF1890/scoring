@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Personnage</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ personnage.id }}</td>
+            </tr>
+            <tr>
+                <th>Xp</th>
+                <td>{{ personnage.xP }}</td>
+            </tr>
+            <tr>
+                <th>Forces</th>
+                <td>{{ personnage.forces }}</td>
+            </tr>
+            <tr>
+                <th>Puissancearme</th>
+                <td>{{ personnage.puissanceArme }}</td>
+            </tr>
+            <tr>
+                <th>Pv</th>
+                <td>{{ personnage.pV }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('personnage_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('personnage_edit', { 'id': personnage.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
