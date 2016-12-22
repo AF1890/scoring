@@ -1,0 +1,24 @@
+AppBundle\Entity\Personnage:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PersonnageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        xP:
+            type: integer
+            column: XP
+        forces:
+            type: integer
+            column: Forces
+        puissanceArme:
+            type: integer
+            column: PuissanceArme
+        pV:
+            type: integer
+            column: PV
+    lifecycleCallbacks: {  }
